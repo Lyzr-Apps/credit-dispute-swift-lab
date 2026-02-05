@@ -171,7 +171,7 @@ export default function Home() {
 // Landing Page Component
 function LandingPage({ onSelectPortal }: { onSelectPortal: (view: PortalView) => void }) {
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#1E3A5F' }}>
+    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#EC4899' }}>
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-white mb-4">
@@ -186,7 +186,7 @@ function LandingPage({ onSelectPortal }: { onSelectPortal: (view: PortalView) =>
           {/* Customer Portal */}
           <Card className="hover:shadow-2xl transition-shadow cursor-pointer" onClick={() => onSelectPortal('customer')}>
             <CardHeader className="text-center pb-4">
-              <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#1E3A5F' }}>
+              <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#EC4899' }}>
                 <User className="w-8 h-8 text-white" />
               </div>
               <CardTitle className="text-2xl">Customer Portal</CardTitle>
@@ -201,7 +201,7 @@ function LandingPage({ onSelectPortal }: { onSelectPortal: (view: PortalView) =>
                 <li>• Instant case analysis</li>
                 <li>• Track dispute status</li>
               </ul>
-              <Button className="w-full mt-6" style={{ backgroundColor: '#1E3A5F' }}>
+              <Button className="w-full mt-6" style={{ backgroundColor: '#EC4899' }}>
                 Access Portal
               </Button>
             </CardContent>
@@ -210,7 +210,7 @@ function LandingPage({ onSelectPortal }: { onSelectPortal: (view: PortalView) =>
           {/* Support Dashboard */}
           <Card className="hover:shadow-2xl transition-shadow cursor-pointer" onClick={() => onSelectPortal('support')}>
             <CardHeader className="text-center pb-4">
-              <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#1E3A5F' }}>
+              <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#EC4899' }}>
                 <Headphones className="w-8 h-8 text-white" />
               </div>
               <CardTitle className="text-2xl">Support Dashboard</CardTitle>
@@ -225,7 +225,7 @@ function LandingPage({ onSelectPortal }: { onSelectPortal: (view: PortalView) =>
                 <li>• Make final decisions</li>
                 <li>• Human-in-the-loop controls</li>
               </ul>
-              <Button className="w-full mt-6" style={{ backgroundColor: '#1E3A5F' }}>
+              <Button className="w-full mt-6" style={{ backgroundColor: '#EC4899' }}>
                 Access Dashboard
               </Button>
             </CardContent>
@@ -234,7 +234,7 @@ function LandingPage({ onSelectPortal }: { onSelectPortal: (view: PortalView) =>
           {/* Merchant Dashboard */}
           <Card className="hover:shadow-2xl transition-shadow cursor-pointer" onClick={() => onSelectPortal('merchant')}>
             <CardHeader className="text-center pb-4">
-              <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#1E3A5F' }}>
+              <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#EC4899' }}>
                 <Building className="w-8 h-8 text-white" />
               </div>
               <CardTitle className="text-2xl">Merchant Dashboard</CardTitle>
@@ -249,7 +249,7 @@ function LandingPage({ onSelectPortal }: { onSelectPortal: (view: PortalView) =>
                 <li>• Upload supporting evidence</li>
                 <li>• Submit transaction proofs</li>
               </ul>
-              <Button className="w-full mt-6" style={{ backgroundColor: '#1E3A5F' }}>
+              <Button className="w-full mt-6" style={{ backgroundColor: '#EC4899' }}>
                 Access Dashboard
               </Button>
             </CardContent>
@@ -355,7 +355,7 @@ function CustomerPortal({ onBack }: { onBack: () => void }) {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
-            <h1 className="text-3xl font-bold" style={{ color: '#1E3A5F' }}>Customer Portal</h1>
+            <h1 className="text-3xl font-bold" style={{ color: '#EC4899' }}>Customer Portal</h1>
           </div>
         </div>
 
@@ -384,7 +384,7 @@ function CustomerPortal({ onBack }: { onBack: () => void }) {
               <CardContent>
                 <Button
                   className="w-full"
-                  style={{ backgroundColor: '#1E3A5F' }}
+                  style={{ backgroundColor: '#EC4899' }}
                   onClick={startDispute}
                 >
                   Start Dispute
@@ -444,7 +444,7 @@ function CustomerPortal({ onBack }: { onBack: () => void }) {
                     <Button
                       onClick={sendMessage}
                       disabled={loading || !inputMessage.trim()}
-                      style={{ backgroundColor: '#1E3A5F' }}
+                      style={{ backgroundColor: '#EC4899' }}
                     >
                       {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                     </Button>
@@ -633,7 +633,7 @@ function DisputeAnalysisView({ result, onClose }: { result: DisputeAnalysisManag
             <p className="text-sm text-blue-800">{result.manager_notes}</p>
           </div>
 
-          <Button onClick={onClose} className="w-full" style={{ backgroundColor: '#1E3A5F' }}>
+          <Button onClick={onClose} className="w-full" style={{ backgroundColor: '#EC4899' }}>
             Close
           </Button>
         </CardContent>
@@ -707,7 +707,7 @@ function SupportDashboard({ onBack }: { onBack: () => void }) {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
-            <h1 className="text-3xl font-bold" style={{ color: '#1E3A5F' }}>Support Dashboard</h1>
+            <h1 className="text-3xl font-bold" style={{ color: '#EC4899' }}>Support Dashboard</h1>
           </div>
         </div>
 
@@ -986,7 +986,7 @@ function MerchantDashboard({ onBack }: { onBack: () => void }) {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
-            <h1 className="text-3xl font-bold" style={{ color: '#1E3A5F' }}>Merchant Dashboard</h1>
+            <h1 className="text-3xl font-bold" style={{ color: '#EC4899' }}>Merchant Dashboard</h1>
           </div>
         </div>
 
@@ -1033,7 +1033,7 @@ function MerchantDashboard({ onBack }: { onBack: () => void }) {
                         </span>
                         <Button
                           size="sm"
-                          style={{ backgroundColor: '#1E3A5F' }}
+                          style={{ backgroundColor: '#EC4899' }}
                           onClick={() => startValidation(txn.id)}
                         >
                           Validate Transaction
@@ -1095,7 +1095,7 @@ function MerchantDashboard({ onBack }: { onBack: () => void }) {
                     <Button
                       onClick={sendMessage}
                       disabled={loading || !inputMessage.trim()}
-                      style={{ backgroundColor: '#1E3A5F' }}
+                      style={{ backgroundColor: '#EC4899' }}
                     >
                       {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                     </Button>

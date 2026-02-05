@@ -229,7 +229,7 @@ export function DocumentUpload({
             onClick={uploadFiles}
             disabled={uploading}
             className="w-full"
-            style={{ backgroundColor: '#1E3A5F' }}
+            style={{ backgroundColor: '#EC4899' }}
           >
             {uploading ? (
               <>
