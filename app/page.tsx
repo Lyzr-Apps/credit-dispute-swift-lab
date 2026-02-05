@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Loader2, ArrowLeft, Send, CheckCircle, XCircle, AlertCircle, User, Building, Headphones } from 'lucide-react'
+import { DocumentUpload } from '@/components/DocumentUpload'
 
 // Agent IDs
 const AGENT_IDS = {
@@ -269,6 +270,7 @@ function CustomerPortal({ onBack }: { onBack: () => void }) {
   const [analysisResult, setAnalysisResult] = useState<DisputeAnalysisManagerResult | null>(null)
   const [showAnalysis, setShowAnalysis] = useState(false)
   const [notification, setNotification] = useState<{ type: 'success' | 'error' | 'info'; message: string } | null>(null)
+  const [uploadedDocumentIds, setUploadedDocumentIds] = useState<string[]>([])
 
   const showNotification = (type: 'success' | 'error' | 'info', message: string) => {
     setNotification({ type, message })
@@ -512,6 +514,22 @@ function CustomerPortal({ onBack }: { onBack: () => void }) {
                           <p className="text-sm text-gray-700 mt-1">{disputeData.customer_narrative}</p>
                         </div>
                       )}
+
+                      <div className="border-t pt-4">
+                        <DocumentUpload
+                          onUploadComplete={(assetIds) => {
+                            setUploadedDocumentIds(assetIds)
+                            showNotification('success', `Uploaded ${assetIds.length} document(s)`)
+                          }}
+                          maxFiles={5}
+                          label="Supporting Documents"
+                        />
+                        {uploadedDocumentIds.length > 0 && (
+                          <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded text-xs text-blue-800">
+                            {uploadedDocumentIds.length} document(s) attached to this dispute
+                          </div>
+                        )}
+                      </div>
 
                       {disputeData.information_complete && (
                         <Button
@@ -877,6 +895,7 @@ function MerchantDashboard({ onBack }: { onBack: () => void }) {
   const [loading, setLoading] = useState(false)
   const [validationResult, setValidationResult] = useState<TransactionValidationResult | null>(null)
   const [notification, setNotification] = useState<{ type: 'success' | 'error' | 'info'; message: string } | null>(null)
+  const [uploadedEvidenceIds, setUploadedEvidenceIds] = useState<string[]>([])
 
   const showNotification = (type: 'success' | 'error' | 'info', message: string) => {
     setNotification({ type, message })
@@ -1124,6 +1143,22 @@ function MerchantDashboard({ onBack }: { onBack: () => void }) {
                         <p className="text-sm text-yellow-800">{validationResult.merchant_notes}</p>
                       </div>
 
+                      <div className="border-t pt-4">
+                        <DocumentUpload
+                          onUploadComplete={(assetIds) => {
+                            setUploadedEvidenceIds(assetIds)
+                            showNotification('success', `Uploaded ${assetIds.length} evidence file(s)`)
+                          }}
+                          maxFiles={10}
+                          label="Upload Evidence"
+                        />
+                        {uploadedEvidenceIds.length > 0 && (
+                          <div className="mt-2 p-2 bg-green-50 border border-green-200 rounded text-xs text-green-800">
+                            {uploadedEvidenceIds.length} evidence file(s) attached
+                          </div>
+                        )}
+                      </div>
+
                       <div className="space-y-2 pt-4 border-t">
                         <Button
                           className="w-full"
@@ -1139,6 +1174,7 @@ function MerchantDashboard({ onBack }: { onBack: () => void }) {
                             setSelectedTransaction(null)
                             setChatMessages([])
                             setValidationResult(null)
+                            setUploadedEvidenceIds([])
                           }}
                         >
                           Cancel
@@ -1146,9 +1182,21 @@ function MerchantDashboard({ onBack }: { onBack: () => void }) {
                       </div>
                     </>
                   ) : (
-                    <p className="text-sm text-gray-500">
-                      Provide validation evidence to see summary...
-                    </p>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-500">
+                        Provide validation evidence to see summary...
+                      </p>
+                      <div className="border-t pt-4">
+                        <DocumentUpload
+                          onUploadComplete={(assetIds) => {
+                            setUploadedEvidenceIds(assetIds)
+                            showNotification('success', `Uploaded ${assetIds.length} evidence file(s)`)
+                          }}
+                          maxFiles={10}
+                          label="Upload Evidence"
+                        />
+                      </div>
+                    </div>
                   )}
                 </CardContent>
               </Card>
