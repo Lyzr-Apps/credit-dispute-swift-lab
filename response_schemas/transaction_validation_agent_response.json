@@ -1,0 +1,149 @@
+{
+  "agent_name": "Transaction Validation Agent",
+  "agent_id": "698492412a28e3ee67ced147",
+  "agent_purpose": "Validates disputed transactions for merchants by cross-referencing transaction details and providing validation recommendations",
+  "description": "Schema for transaction validation responses including merchant data comparison and fraud analysis",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "validation_id": "string",
+      "transaction_id": "string",
+      "validation_status": "string",
+      "merchant_data": {
+        "transaction_found": "boolean",
+        "recorded_amount": "null",
+        "recorded_date": "null",
+        "customer_id": "null",
+        "authorization_code": "null"
+      },
+      "discrepancy_analysis": {
+        "amount_match": "boolean",
+        "date_match": "boolean",
+        "customer_match": "boolean",
+        "discrepancies_found": [
+          "string"
+        ]
+      },
+      "supporting_evidence": {
+        "delivery_confirmation": "boolean",
+        "service_completion": "boolean",
+        "refund_processed": "boolean",
+        "communication_logs": [
+          "any"
+        ]
+      },
+      "fraud_indicators": {
+        "suspicious_activity": "boolean",
+        "risk_flags": [
+          "any"
+        ],
+        "fraud_score": "number"
+      },
+      "validation_recommendation": {
+        "recommended_action": "string",
+        "confidence": "number",
+        "reasoning": "string"
+      },
+      "merchant_notes": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string",
+      "api_integration_status": "string"
+    }
+  },
+  "example_response": {
+    "status": "error",
+    "result": {
+      "validation_id": "VAL-TXN-2024-98765",
+      "transaction_id": "TXN-2024-98765",
+      "validation_status": "insufficient_data",
+      "merchant_data": {
+        "transaction_found": false,
+        "recorded_amount": null,
+        "recorded_date": null,
+        "customer_id": null,
+        "authorization_code": null
+      },
+      "discrepancy_analysis": {
+        "amount_match": false,
+        "date_match": false,
+        "customer_match": false,
+        "discrepancies_found": [
+          "Unable to access merchant transaction records. API integration not configured."
+        ]
+      },
+      "supporting_evidence": {
+        "delivery_confirmation": false,
+        "service_completion": false,
+        "refund_processed": false,
+        "communication_logs": []
+      },
+      "fraud_indicators": {
+        "suspicious_activity": false,
+        "risk_flags": [],
+        "fraud_score": 0
+      },
+      "validation_recommendation": {
+        "recommended_action": "investigate_further",
+        "confidence": 0,
+        "reasoning": "Transaction validation cannot proceed due to lack of access to merchant transaction database. Please configure API credentials for full validation."
+      },
+      "merchant_notes": "To validate this dispute, please enable API access so transaction records, delivery confirmation, and signatures or authorization can be verified."
+    },
+    "metadata": {
+      "agent_name": "Transaction Validation Agent",
+      "timestamp": "2024-06-13T14:53:28Z",
+      "api_integration_status": "disconnected"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-05T12:57:47.583424",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "error",
+    "result": {
+      "validation_id": "VAL-TXN-2024-98765",
+      "transaction_id": "TXN-2024-98765",
+      "validation_status": "insufficient_data",
+      "merchant_data": {
+        "transaction_found": false,
+        "recorded_amount": null,
+        "recorded_date": null,
+        "customer_id": null,
+        "authorization_code": null
+      },
+      "discrepancy_analysis": {
+        "amount_match": false,
+        "date_match": false,
+        "customer_match": false,
+        "discrepancies_found": [
+          "Unable to access merchant transaction records. API integration not configured."
+        ]
+      },
+      "supporting_evidence": {
+        "delivery_confirmation": false,
+        "service_completion": false,
+        "refund_processed": false,
+        "communication_logs": []
+      },
+      "fraud_indicators": {
+        "suspicious_activity": false,
+        "risk_flags": [],
+        "fraud_score": 0
+      },
+      "validation_recommendation": {
+        "recommended_action": "investigate_further",
+        "confidence": 0,
+        "reasoning": "Transaction validation cannot proceed due to lack of access to merchant transaction database. Please configure API credentials for full validation."
+      },
+      "merchant_notes": "To validate this dispute, please enable API access so transaction records, delivery confirmation, and signatures or authorization can be verified."
+    },
+    "metadata": {
+      "agent_name": "Transaction Validation Agent",
+      "timestamp": "2024-06-13T14:53:28Z",
+      "api_integration_status": "disconnected"
+    }
+  },
+  "test_passed": true
+}

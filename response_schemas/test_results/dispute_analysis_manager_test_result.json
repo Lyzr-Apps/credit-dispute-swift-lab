@@ -1,0 +1,58 @@
+{
+  "agent_name": "Dispute Analysis Manager",
+  "agent_id": "69849222323dfe72e4c8cd61",
+  "test_message": "Process dispute for transaction ID TXN-2024-98765: Customer Jane Doe claims unauthorized charge of $250 from TechGadgets Store on 02/03/2026. Customer states she never made this purchase and card was in her possession.",
+  "expected_purpose": "manager (coordinates sub-agents)",
+  "timestamp": "2026-02-05T12:57:43.598293",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "dispute_resolution_id": "TXN-2024-98765",
+      "final_decision": "auto_approve",
+      "confidence_score": "91",
+      "knowledge_summary": {
+        "applicable_policies": [
+          "Unauthorized Credit Card Transaction Handling Policy",
+          "Regulation E Compliance Procedures",
+          "Fraud Dispute Escalation Guidelines"
+        ],
+        "historical_precedents": "Recent and highly similar cases (95-97% similarity) involving TechGadgets Store and unauthorized charges were approved when claims were timely and credible. Escalations only occurred in the presence of documentation disputes.",
+        "policy_alignment": "aligned"
+      },
+      "case_evaluation": {
+        "compliance_status": "compliant",
+        "evidence_quality": "strong",
+        "risk_level": "low"
+      },
+      "resolution_details": {
+        "recommended_action": "Approve dispute and initiate $250 chargeback to the customer. Provide provisional credit within 1-2 business days.",
+        "approval_amount": 250,
+        "resolution_timeline": "1-2 business days",
+        "next_steps": [
+          "Initiate chargeback with merchant (TechGadgets Store)",
+          "Issue provisional credit to customer Jane Doe",
+          "Notify customer of dispute approval and provisional credit",
+          "Monitor and close upon merchant response or after statutory period"
+        ]
+      },
+      "escalation_info": {
+        "requires_escalation": false,
+        "escalation_priority": "low",
+        "escalation_reasons": [],
+        "assigned_department": null
+      },
+      "manager_notes": "All policy and regulatory requirements are met for unauthorized transaction resolution. The customer reported promptly, cardholder liability is capped by policy and regulation, and no contradictory evidence exists. The transaction is within historical precedent parameters for auto-approval. Pending merchant review is process-standard but does not delay consumer protection or provisional credit. Auto-approval is recommended with sustained post-resolution monitoring."
+    },
+    "metadata": {
+      "agent_name": "Dispute Analysis Manager",
+      "timestamp": "2024-06-20T19:08:35Z",
+      "sub_agents_consulted": [
+        "Knowledge Retrieval Agent",
+        "Case Analysis Agent"
+      ]
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"dispute_resolution_id\": \"TXN-2024-98765\",\n    \"final_decision\": \"auto_approve\",\n    \"confidence_score\": \"91\",\n    \"knowledge_summary\": {\n      \"applicable_policies\": [\n        \"Unauthorized Credit Card Transaction Handling Policy\",\n        \"Regulation E Compliance Procedures\",\n        \"Fraud Dispute Escalation Guidelines\"\n      ],\n      \"historical_precedents\": \"Recent and highly similar cases (95-97% similarity) involving TechGadgets Store and unauthorized charges were approved when claims were timely and credible. Escalations only occurred in the presence of documentation disputes.\",\n      \"policy_alignment\": \"aligned\"\n    },\n    \"case_evaluation\": {\n      \"compliance_status\": \"compliant\",\n      \"evidence_quality\": \"strong\",\n      \"risk_level\": \"low\"\n    },\n    \"resolution_details\": {\n      \"recommended_action\": \"Approve dispute and initiate $250 chargeback to the customer. Provide provisional credit within 1-2 business days.\",\n      \"approval_amount\": 250,\n      \"resolution_timeline\": \"1-2 business days\",\n      \"next_steps\": [\n        \"Initiate chargeback with merchant (TechGadgets Store)\",\n        \"Issue provisional credit to customer Jane Doe\",\n        \"Notify customer of dispute approval and provisional credit\",\n        \"Monitor and close upon merchant response or after statutory period\"\n      ]\n    },\n    \"escalation_info\": {\n      \"requires_escalation\": false,\n      \"escalation_priority\": \"low\",\n      \"escalation_reasons\": [],\n      \"assigned_department\": null\n    },\n    \"manager_notes\": \"All policy and regulatory requirements are met for unauthorized transaction resolution. The customer reported promptly, cardholder liability is capped by policy and regulation, and no contradictory evidence exists. The transaction is within historical precedent parameters for auto-approval. Pending merchant review is process-standard but does not delay consumer protection or provisional credit. Auto-approval is recommended with sustained post-resolution monitoring.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Dispute Analysis Manager\",\n    \"timestamp\": \"2024-06-20T19:08:35Z\",\n    \"sub_agents_consulted\": [\"Knowledge Retrieval Agent\", \"Case Analysis Agent\"]\n  }\n}"
+}

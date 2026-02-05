@@ -1,0 +1,66 @@
+{
+  "agent_name": "Knowledge Retrieval Agent",
+  "agent_id": "698491e74b4f342743a1793f",
+  "test_message": "What are the policies for unauthorized transaction disputes and what documentation is required?",
+  "expected_purpose": "assistant (knowledge base search)",
+  "timestamp": "2026-02-05T12:56:56.518025",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "retrieved_policies": [
+        {
+          "policy_id": "UTD-101",
+          "policy_name": "Unauthorized Transaction Dispute Policy",
+          "policy_content": "This policy covers disputes initiated due to unauthorized transactions on account holders\u2019 credit or debit cards. Account holders must promptly notify the issuing institution upon discovering an unauthorized activity. The dispute must typically be filed within 60 days of the transaction date. Required documentation may include a signed statement of unauthorized use, transaction receipts to demonstrate non-involvement, and any correspondences with merchants. Full investigation procedures and final decision timelines are outlined in the policy.",
+          "relevance_score": "95",
+          "applicable_conditions": [
+            "Transaction must be marked or proven as unauthorized by the account holder",
+            "Dispute filed within stipulated policy timeframe (e.g., 60 days)",
+            "Supporting documentation provided"
+          ]
+        }
+      ],
+      "relevant_faqs": [
+        {
+          "faq_id": "FAQ-UTD-02",
+          "question": "What documentation do I need to submit for an unauthorized transaction dispute?",
+          "answer": "You must submit a signed statement attesting that the transaction was unauthorized, copies of any receipts you may have, communication with the merchant if applicable, and any other evidence supporting your claim of non-involvement.",
+          "category": "Unauthorized Transactions"
+        }
+      ],
+      "historical_cases": [
+        {
+          "case_id": "HC-2023-077",
+          "similarity_score": "93",
+          "outcome": "approved",
+          "resolution_time": "12 days",
+          "key_factors": [
+            "Timely notification",
+            "Clear evidence of non-involvement",
+            "Full documentation provided"
+          ]
+        },
+        {
+          "case_id": "HC-2022-044",
+          "similarity_score": "89",
+          "outcome": "denied",
+          "resolution_time": "9 days",
+          "key_factors": [
+            "Delayed filing beyond policy timeframe",
+            "Insufficient documentation"
+          ]
+        }
+      ],
+      "knowledge_summary": "For unauthorized transaction disputes, the key policy requires the account holder to report the issue within the policy timeframe (often 60 days). Necessary documentation includes a signed attestation of unauthorized use, relevant receipts, and records of merchant communications. Disputes with timely reporting and comprehensive documentation are typically resolved in favor of the disputant, while delays or insufficient evidence commonly result in denial.",
+      "retrieval_confidence": "95"
+    },
+    "metadata": {
+      "agent_name": "Knowledge Retrieval Agent",
+      "timestamp": "2024-06-14T17:52:41Z",
+      "sources_searched": "3"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"retrieved_policies\": [\n      {\n        \"policy_id\": \"UTD-101\",\n        \"policy_name\": \"Unauthorized Transaction Dispute Policy\",\n        \"policy_content\": \"This policy covers disputes initiated due to unauthorized transactions on account holders\u2019 credit or debit cards. Account holders must promptly notify the issuing institution upon discovering an unauthorized activity. The dispute must typically be filed within 60 days of the transaction date. Required documentation may include a signed statement of unauthorized use, transaction receipts to demonstrate non-involvement, and any correspondences with merchants. Full investigation procedures and final decision timelines are outlined in the policy.\",\n        \"relevance_score\": \"95\",\n        \"applicable_conditions\": [\n          \"Transaction must be marked or proven as unauthorized by the account holder\",\n          \"Dispute filed within stipulated policy timeframe (e.g., 60 days)\",\n          \"Supporting documentation provided\"\n        ]\n      }\n    ],\n    \"relevant_faqs\": [\n      {\n        \"faq_id\": \"FAQ-UTD-02\",\n        \"question\": \"What documentation do I need to submit for an unauthorized transaction dispute?\",\n        \"answer\": \"You must submit a signed statement attesting that the transaction was unauthorized, copies of any receipts you may have, communication with the merchant if applicable, and any other evidence supporting your claim of non-involvement.\",\n        \"category\": \"Unauthorized Transactions\"\n      }\n    ],\n    \"historical_cases\": [\n      {\n        \"case_id\": \"HC-2023-077\",\n        \"similarity_score\": \"93\",\n        \"outcome\": \"approved\",\n        \"resolution_time\": \"12 days\",\n        \"key_factors\": [\n          \"Timely notification\",\n          \"Clear evidence of non-involvement\",\n          \"Full documentation provided\"\n        ]\n      },\n      {\n        \"case_id\": \"HC-2022-044\",\n        \"similarity_score\": \"89\",\n        \"outcome\": \"denied\",\n        \"resolution_time\": \"9 days\",\n        \"key_factors\": [\n          \"Delayed filing beyond policy timeframe\",\n          \"Insufficient documentation\"\n        ]\n      }\n    ],\n    \"knowledge_summary\": \"For unauthorized transaction disputes, the key policy requires the account holder to report the issue within the policy timeframe (often 60 days). Necessary documentation includes a signed attestation of unauthorized use, relevant receipts, and records of merchant communications. Disputes with timely reporting and comprehensive documentation are typically resolved in favor of the disputant, while delays or insufficient evidence commonly result in denial.\",\n    \"retrieval_confidence\": \"95\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Knowledge Retrieval Agent\",\n    \"timestamp\": \"2024-06-14T17:52:41Z\",\n    \"sources_searched\": \"3\"\n  }\n}"
+}

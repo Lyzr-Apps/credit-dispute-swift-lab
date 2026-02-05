@@ -1,0 +1,45 @@
+{
+  "agent_name": "Case Analysis Agent",
+  "agent_id": "69849207257a39e26c94e7be",
+  "test_message": "Analyze this dispute: Transaction amount $250, merchant TechGadgets Store, customer claims unauthorized purchase, transaction date 2 days ago, customer has valid account history.",
+  "expected_purpose": "assistant (case analysis)",
+  "timestamp": "2026-02-05T12:56:59.785098",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "case_analysis_id": "CA-20240613-001",
+      "resolution_confidence": "91",
+      "policy_compliance": {
+        "compliant": true,
+        "matched_policies": [
+          "Unauthorized Transaction Policy",
+          "Chargeback Consumer Protections"
+        ],
+        "compliance_score": "95"
+      },
+      "evidence_assessment": {
+        "strength": "strong",
+        "completeness": "90",
+        "gaps": []
+      },
+      "risk_factors": {
+        "financial_risk": "low",
+        "fraud_indicators": [],
+        "complexity_level": "low"
+      },
+      "recommended_action": "auto_approve",
+      "escalation_required": false,
+      "escalation_reasons": [],
+      "estimated_resolution_time": "Within 1 business day",
+      "analysis_reasoning": "The dispute involves an unauthorized charge of $250 at TechGadgets Store, reported just 2 days after the transaction. The customer has a valid and consistent account history, and there is no evidence of account misuse or prior disputes. The claim falls clearly within the standardized unauthorized transaction policy, is supported by timely reporting, and carries low financial risk. No fraud indicators or policy gaps are present, and precedent cases with similar facts were resolved in favor of the customer. All criteria for auto-resolution are met; no escalation is necessary."
+    },
+    "metadata": {
+      "agent_name": "Case Analysis Agent",
+      "timestamp": "2024-06-13T11:43:00Z",
+      "analysis_duration": "40 seconds"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"case_analysis_id\": \"CA-20240613-001\",\n    \"resolution_confidence\": \"91\",\n    \"policy_compliance\": {\n      \"compliant\": true,\n      \"matched_policies\": [\n        \"Unauthorized Transaction Policy\",\n        \"Chargeback Consumer Protections\"\n      ],\n      \"compliance_score\": \"95\"\n    },\n    \"evidence_assessment\": {\n      \"strength\": \"strong\",\n      \"completeness\": \"90\",\n      \"gaps\": []\n    },\n    \"risk_factors\": {\n      \"financial_risk\": \"low\",\n      \"fraud_indicators\": [],\n      \"complexity_level\": \"low\"\n    },\n    \"recommended_action\": \"auto_approve\",\n    \"escalation_required\": false,\n    \"escalation_reasons\": [],\n    \"estimated_resolution_time\": \"Within 1 business day\",\n    \"analysis_reasoning\": \"The dispute involves an unauthorized charge of $250 at TechGadgets Store, reported just 2 days after the transaction. The customer has a valid and consistent account history, and there is no evidence of account misuse or prior disputes. The claim falls clearly within the standardized unauthorized transaction policy, is supported by timely reporting, and carries low financial risk. No fraud indicators or policy gaps are present, and precedent cases with similar facts were resolved in favor of the customer. All criteria for auto-resolution are met; no escalation is necessary.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Case Analysis Agent\",\n    \"timestamp\": \"2024-06-13T11:43:00Z\",\n    \"analysis_duration\": \"40 seconds\"\n  }\n}"
+}

@@ -1,0 +1,67 @@
+{
+  "agent_name": "Dispute Conversation Agent",
+  "agent_id": "6984954ad957d325f54b4ded",
+  "agent_purpose": "dispute_intake",
+  "description": "Conducts structured conversational intake with customers to gather dispute details, transaction information, and supporting context",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "transaction_id": "null",
+      "amount": "number",
+      "merchant_name": "string",
+      "transaction_date": "string",
+      "dispute_type": "string",
+      "customer_narrative": "string",
+      "timeline": "string",
+      "previous_contact_attempts": "null",
+      "information_complete": "boolean",
+      "next_steps": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "transaction_id": null,
+      "amount": 250,
+      "merchant_name": "TechGadgets Store",
+      "transaction_date": "2023-10-11",
+      "dispute_type": "unauthorized",
+      "customer_narrative": "The user never authorized a purchase for $250 from TechGadgets Store that appeared on their account yesterday.",
+      "timeline": "Transaction appeared on the account on 2023-10-11",
+      "previous_contact_attempts": null,
+      "information_complete": false,
+      "next_steps": "Please provide the transaction ID so we can complete the dispute intake process."
+    },
+    "metadata": {
+      "agent_name": "Dispute Conversation Agent",
+      "timestamp": "2023-10-12T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-05T13:04:33.889888",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "transaction_id": null,
+      "amount": 250,
+      "merchant_name": "TechGadgets Store",
+      "transaction_date": "2023-10-11",
+      "dispute_type": "unauthorized",
+      "customer_narrative": "The user never authorized a purchase for $250 from TechGadgets Store that appeared on their account yesterday.",
+      "timeline": "Transaction appeared on the account on 2023-10-11",
+      "previous_contact_attempts": null,
+      "information_complete": false,
+      "next_steps": "Please provide the transaction ID so we can complete the dispute intake process."
+    },
+    "metadata": {
+      "agent_name": "Dispute Conversation Agent",
+      "timestamp": "2023-10-12T12:00:00Z"
+    }
+  },
+  "test_passed": true
+}

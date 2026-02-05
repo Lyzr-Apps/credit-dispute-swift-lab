@@ -1,0 +1,101 @@
+{
+  "workflow_name": "Credit Dispute Management System",
+  "architecture_pattern": "Multiple Independent Agents + Manager-Subagent (Hybrid)",
+  "created_at": "2026-02-05T00:00:00Z",
+  "agents": [
+    {
+      "agent_id": "6984954ad957d325f54b4ded",
+      "name": "Dispute Conversation Agent",
+      "type": "Independent",
+      "description": "Conducts structured conversational intake with customers to gather dispute details, transaction information, and supporting context",
+      "trigger": "Start Dispute on Customer Portal",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.5,
+      "top_p": 0.95,
+      "response_schema": "response_schemas/dispute_conversation_agent_response.json"
+    },
+    {
+      "agent_id": "698491e74b4f342743a1793f",
+      "name": "Knowledge Retrieval Agent",
+      "type": "Sub-Agent",
+      "description": "Searches dispute policies, FAQs, and historical case outcomes from knowledge base to support case analysis",
+      "trigger": "Auto (via Manager)",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "top_p": 1,
+      "knowledge_base": {
+        "rag_id": "698491be46b91bce97b0446f",
+        "rag_name": "disputepolicieskbaaja",
+        "description": "Knowledge base containing dispute policies, FAQs, and historical case outcomes"
+      },
+      "response_schema": "response_schemas/knowledge_retrieval_agent_response.json"
+    },
+    {
+      "agent_id": "69849207257a39e26c94e7be",
+      "name": "Case Analysis Agent",
+      "type": "Sub-Agent",
+      "description": "Analyzes dispute details against retrieved policies, calculates resolution confidence, flags cases requiring human review",
+      "trigger": "Auto (via Manager)",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1,
+      "response_schema": "response_schemas/case_analysis_agent_response.json"
+    },
+    {
+      "agent_id": "69849222323dfe72e4c8cd61",
+      "name": "Dispute Analysis Manager",
+      "type": "Manager",
+      "description": "Coordinates knowledge retrieval and case analysis, aggregates findings, determines if human escalation is required or auto-resolution is possible",
+      "trigger": "Submit for Analysis on Customer Portal",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1,
+      "managed_agents": [
+        "698491e74b4f342743a1793f",
+        "69849207257a39e26c94e7be"
+      ],
+      "response_schema": "response_schemas/dispute_analysis_manager_response.json"
+    },
+    {
+      "agent_id": "698492412a28e3ee67ced147",
+      "name": "Transaction Validation Agent",
+      "type": "Independent",
+      "description": "Assists merchants in validating disputed transactions, cross-references transaction details, and provides validation recommendations",
+      "trigger": "Validate Transaction on Merchant Dashboard",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "top_p": 1,
+      "custom_integration": {
+        "required": true,
+        "type": "Custom API (Transaction DB)",
+        "note": "Requires custom API integration for transaction database access"
+      },
+      "response_schema": "response_schemas/transaction_validation_agent_response.json"
+    }
+  ],
+  "workflow_flow": [
+    "Customer initiates dispute via 'Start Dispute' → Dispute Conversation Agent",
+    "Customer clicks 'Submit for Analysis' → Dispute Analysis Manager",
+    "Dispute Analysis Manager coordinates → Knowledge Retrieval Agent + Case Analysis Agent (sub-agents)",
+    "Merchant clicks 'Validate Transaction' → Transaction Validation Agent"
+  ],
+  "data_sources": {
+    "knowledge_base": {
+      "rag_id": "698491be46b91bce97b0446f",
+      "rag_name": "disputepolicieskbaaja",
+      "purpose": "Dispute policies, FAQs, and historical case outcomes",
+      "used_by": "Knowledge Retrieval Agent"
+    },
+    "custom_api": {
+      "type": "Transaction DB",
+      "purpose": "Transaction validation and merchant records",
+      "used_by": "Transaction Validation Agent",
+      "integration_required": true
+    }
+  }
+}

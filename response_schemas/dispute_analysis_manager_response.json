@@ -1,0 +1,150 @@
+{
+  "agent_name": "Dispute Analysis Manager",
+  "agent_id": "69849222323dfe72e4c8cd61",
+  "agent_purpose": "Coordinates sub-agents, aggregates findings, and makes final determination on dispute resolution path",
+  "description": "Schema for manager agent responses including aggregated analysis and final resolution decisions",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "dispute_resolution_id": "string",
+      "final_decision": "string",
+      "confidence_score": "string",
+      "knowledge_summary": {
+        "applicable_policies": [
+          "string"
+        ],
+        "historical_precedents": "string",
+        "policy_alignment": "string"
+      },
+      "case_evaluation": {
+        "compliance_status": "string",
+        "evidence_quality": "string",
+        "risk_level": "string"
+      },
+      "resolution_details": {
+        "recommended_action": "string",
+        "approval_amount": "number",
+        "resolution_timeline": "string",
+        "next_steps": [
+          "string"
+        ]
+      },
+      "escalation_info": {
+        "requires_escalation": "boolean",
+        "escalation_priority": "string",
+        "escalation_reasons": [
+          "any"
+        ],
+        "assigned_department": "null"
+      },
+      "manager_notes": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string",
+      "sub_agents_consulted": [
+        "string"
+      ]
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "dispute_resolution_id": "TXN-2024-98765",
+      "final_decision": "auto_approve",
+      "confidence_score": "91",
+      "knowledge_summary": {
+        "applicable_policies": [
+          "Unauthorized Credit Card Transaction Handling Policy",
+          "Regulation E Compliance Procedures",
+          "Fraud Dispute Escalation Guidelines"
+        ],
+        "historical_precedents": "Recent and highly similar cases (95-97% similarity) involving TechGadgets Store and unauthorized charges were approved when claims were timely and credible. Escalations only occurred in the presence of documentation disputes.",
+        "policy_alignment": "aligned"
+      },
+      "case_evaluation": {
+        "compliance_status": "compliant",
+        "evidence_quality": "strong",
+        "risk_level": "low"
+      },
+      "resolution_details": {
+        "recommended_action": "Approve dispute and initiate $250 chargeback to the customer. Provide provisional credit within 1-2 business days.",
+        "approval_amount": 250,
+        "resolution_timeline": "1-2 business days",
+        "next_steps": [
+          "Initiate chargeback with merchant (TechGadgets Store)",
+          "Issue provisional credit to customer Jane Doe",
+          "Notify customer of dispute approval and provisional credit",
+          "Monitor and close upon merchant response or after statutory period"
+        ]
+      },
+      "escalation_info": {
+        "requires_escalation": false,
+        "escalation_priority": "low",
+        "escalation_reasons": [],
+        "assigned_department": null
+      },
+      "manager_notes": "All policy and regulatory requirements are met for unauthorized transaction resolution. The customer reported promptly, cardholder liability is capped by policy and regulation, and no contradictory evidence exists. The transaction is within historical precedent parameters for auto-approval. Pending merchant review is process-standard but does not delay consumer protection or provisional credit. Auto-approval is recommended with sustained post-resolution monitoring."
+    },
+    "metadata": {
+      "agent_name": "Dispute Analysis Manager",
+      "timestamp": "2024-06-20T19:08:35Z",
+      "sub_agents_consulted": [
+        "Knowledge Retrieval Agent",
+        "Case Analysis Agent"
+      ]
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-05T12:57:43.598877",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "dispute_resolution_id": "TXN-2024-98765",
+      "final_decision": "auto_approve",
+      "confidence_score": "91",
+      "knowledge_summary": {
+        "applicable_policies": [
+          "Unauthorized Credit Card Transaction Handling Policy",
+          "Regulation E Compliance Procedures",
+          "Fraud Dispute Escalation Guidelines"
+        ],
+        "historical_precedents": "Recent and highly similar cases (95-97% similarity) involving TechGadgets Store and unauthorized charges were approved when claims were timely and credible. Escalations only occurred in the presence of documentation disputes.",
+        "policy_alignment": "aligned"
+      },
+      "case_evaluation": {
+        "compliance_status": "compliant",
+        "evidence_quality": "strong",
+        "risk_level": "low"
+      },
+      "resolution_details": {
+        "recommended_action": "Approve dispute and initiate $250 chargeback to the customer. Provide provisional credit within 1-2 business days.",
+        "approval_amount": 250,
+        "resolution_timeline": "1-2 business days",
+        "next_steps": [
+          "Initiate chargeback with merchant (TechGadgets Store)",
+          "Issue provisional credit to customer Jane Doe",
+          "Notify customer of dispute approval and provisional credit",
+          "Monitor and close upon merchant response or after statutory period"
+        ]
+      },
+      "escalation_info": {
+        "requires_escalation": false,
+        "escalation_priority": "low",
+        "escalation_reasons": [],
+        "assigned_department": null
+      },
+      "manager_notes": "All policy and regulatory requirements are met for unauthorized transaction resolution. The customer reported promptly, cardholder liability is capped by policy and regulation, and no contradictory evidence exists. The transaction is within historical precedent parameters for auto-approval. Pending merchant review is process-standard but does not delay consumer protection or provisional credit. Auto-approval is recommended with sustained post-resolution monitoring."
+    },
+    "metadata": {
+      "agent_name": "Dispute Analysis Manager",
+      "timestamp": "2024-06-20T19:08:35Z",
+      "sub_agents_consulted": [
+        "Knowledge Retrieval Agent",
+        "Case Analysis Agent"
+      ]
+    }
+  },
+  "test_passed": true
+}

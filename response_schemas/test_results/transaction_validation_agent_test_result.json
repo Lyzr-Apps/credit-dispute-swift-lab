@@ -1,0 +1,55 @@
+{
+  "agent_name": "Transaction Validation Agent",
+  "agent_id": "698492412a28e3ee67ced147",
+  "test_message": "Validate transaction TXN-2024-98765 for $250. Customer disputes this charge. Do you have proof of delivery, customer signature, or authorization records?",
+  "expected_purpose": "assistant (merchant validation)",
+  "timestamp": "2026-02-05T12:57:47.582728",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "error",
+    "result": {
+      "validation_id": "VAL-TXN-2024-98765",
+      "transaction_id": "TXN-2024-98765",
+      "validation_status": "insufficient_data",
+      "merchant_data": {
+        "transaction_found": false,
+        "recorded_amount": null,
+        "recorded_date": null,
+        "customer_id": null,
+        "authorization_code": null
+      },
+      "discrepancy_analysis": {
+        "amount_match": false,
+        "date_match": false,
+        "customer_match": false,
+        "discrepancies_found": [
+          "Unable to access merchant transaction records. API integration not configured."
+        ]
+      },
+      "supporting_evidence": {
+        "delivery_confirmation": false,
+        "service_completion": false,
+        "refund_processed": false,
+        "communication_logs": []
+      },
+      "fraud_indicators": {
+        "suspicious_activity": false,
+        "risk_flags": [],
+        "fraud_score": 0
+      },
+      "validation_recommendation": {
+        "recommended_action": "investigate_further",
+        "confidence": 0,
+        "reasoning": "Transaction validation cannot proceed due to lack of access to merchant transaction database. Please configure API credentials for full validation."
+      },
+      "merchant_notes": "To validate this dispute, please enable API access so transaction records, delivery confirmation, and signatures or authorization can be verified."
+    },
+    "metadata": {
+      "agent_name": "Transaction Validation Agent",
+      "timestamp": "2024-06-13T14:53:28Z",
+      "api_integration_status": "disconnected"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"error\",\n  \"result\": {\n    \"validation_id\": \"VAL-TXN-2024-98765\",\n    \"transaction_id\": \"TXN-2024-98765\",\n    \"validation_status\": \"insufficient_data\",\n    \"merchant_data\": {\n      \"transaction_found\": false,\n      \"recorded_amount\": null,\n      \"recorded_date\": null,\n      \"customer_id\": null,\n      \"authorization_code\": null\n    },\n    \"discrepancy_analysis\": {\n      \"amount_match\": false,\n      \"date_match\": false,\n      \"customer_match\": false,\n      \"discrepancies_found\": [\"Unable to access merchant transaction records. API integration not configured.\"]\n    },\n    \"supporting_evidence\": {\n      \"delivery_confirmation\": false,\n      \"service_completion\": false,\n      \"refund_processed\": false,\n      \"communication_logs\": []\n    },\n    \"fraud_indicators\": {\n      \"suspicious_activity\": false,\n      \"risk_flags\": [],\n      \"fraud_score\": 0\n    },\n    \"validation_recommendation\": {\n      \"recommended_action\": \"investigate_further\",\n      \"confidence\": 0,\n      \"reasoning\": \"Transaction validation cannot proceed due to lack of access to merchant transaction database. Please configure API credentials for full validation.\"\n    },\n    \"merchant_notes\": \"To validate this dispute, please enable API access so transaction records, delivery confirmation, and signatures or authorization can be verified.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Transaction Validation Agent\",\n    \"timestamp\": \"2024-06-13T14:53:28Z\",\n    \"api_integration_status\": \"disconnected\"\n  }\n}"
+}

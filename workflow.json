@@ -1,0 +1,93 @@
+{
+  "workflow": {
+    "nodes": [
+      {
+        "id": "customer_input",
+        "type": "Input",
+        "label": "Customer Portal",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "dispute_conversation_agent",
+        "type": "Agent",
+        "label": "Dispute Conversation Agent",
+        "nodeCategory": "agent",
+        "agent_id": "6984954ad957d325f54b4ded"
+      },
+      {
+        "id": "dispute_analysis_manager",
+        "type": "Agent",
+        "label": "Dispute Analysis Manager",
+        "nodeCategory": "agent",
+        "agent_id": "69849222323dfe72e4c8cd61"
+      },
+      {
+        "id": "knowledge_retrieval_agent",
+        "type": "Agent",
+        "label": "Knowledge Retrieval Agent",
+        "nodeCategory": "agent",
+        "agent_id": "698491e74b4f342743a1793f"
+      },
+      {
+        "id": "case_analysis_agent",
+        "type": "Agent",
+        "label": "Case Analysis Agent",
+        "nodeCategory": "agent",
+        "agent_id": "69849207257a39e26c94e7be"
+      },
+      {
+        "id": "merchant_input",
+        "type": "Input",
+        "label": "Merchant Dashboard",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "transaction_validation_agent",
+        "type": "Agent",
+        "label": "Transaction Validation Agent",
+        "nodeCategory": "agent",
+        "agent_id": "698492412a28e3ee67ced147"
+      },
+      {
+        "id": "output_node",
+        "type": "Output",
+        "label": "Resolution Output",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      {
+        "source": "customer_input",
+        "target": "dispute_conversation_agent"
+      },
+      {
+        "source": "dispute_conversation_agent",
+        "target": "dispute_analysis_manager"
+      },
+      {
+        "source": "dispute_analysis_manager",
+        "target": "knowledge_retrieval_agent"
+      },
+      {
+        "source": "dispute_analysis_manager",
+        "target": "case_analysis_agent"
+      },
+      {
+        "source": "merchant_input",
+        "target": "transaction_validation_agent"
+      },
+      {
+        "source": "knowledge_retrieval_agent",
+        "target": "output_node"
+      },
+      {
+        "source": "case_analysis_agent",
+        "target": "output_node"
+      },
+      {
+        "source": "transaction_validation_agent",
+        "target": "output_node"
+      }
+    ]
+  }
+}

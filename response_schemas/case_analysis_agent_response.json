@@ -1,0 +1,120 @@
+{
+  "agent_name": "Case Analysis Agent",
+  "agent_id": "69849207257a39e26c94e7be",
+  "agent_purpose": "Analyzes dispute details against policies, calculates resolution confidence, and determines escalation requirements",
+  "description": "Schema for case analysis responses including compliance assessment, risk evaluation, and resolution recommendations",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "case_analysis_id": "string",
+      "resolution_confidence": "string",
+      "policy_compliance": {
+        "compliant": "boolean",
+        "matched_policies": [
+          "string"
+        ],
+        "compliance_score": "string"
+      },
+      "evidence_assessment": {
+        "strength": "string",
+        "completeness": "string",
+        "gaps": [
+          "any"
+        ]
+      },
+      "risk_factors": {
+        "financial_risk": "string",
+        "fraud_indicators": [
+          "any"
+        ],
+        "complexity_level": "string"
+      },
+      "recommended_action": "string",
+      "escalation_required": "boolean",
+      "escalation_reasons": [
+        "any"
+      ],
+      "estimated_resolution_time": "string",
+      "analysis_reasoning": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string",
+      "analysis_duration": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "case_analysis_id": "CA-20240613-001",
+      "resolution_confidence": "91",
+      "policy_compliance": {
+        "compliant": true,
+        "matched_policies": [
+          "Unauthorized Transaction Policy",
+          "Chargeback Consumer Protections"
+        ],
+        "compliance_score": "95"
+      },
+      "evidence_assessment": {
+        "strength": "strong",
+        "completeness": "90",
+        "gaps": []
+      },
+      "risk_factors": {
+        "financial_risk": "low",
+        "fraud_indicators": [],
+        "complexity_level": "low"
+      },
+      "recommended_action": "auto_approve",
+      "escalation_required": false,
+      "escalation_reasons": [],
+      "estimated_resolution_time": "Within 1 business day",
+      "analysis_reasoning": "The dispute involves an unauthorized charge of $250 at TechGadgets Store, reported just 2 days after the transaction. The customer has a valid and consistent account history, and there is no evidence of account misuse or prior disputes. The claim falls clearly within the standardized unauthorized transaction policy, is supported by timely reporting, and carries low financial risk. No fraud indicators or policy gaps are present, and precedent cases with similar facts were resolved in favor of the customer. All criteria for auto-resolution are met; no escalation is necessary."
+    },
+    "metadata": {
+      "agent_name": "Case Analysis Agent",
+      "timestamp": "2024-06-13T11:43:00Z",
+      "analysis_duration": "40 seconds"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-05T12:56:59.785664",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "case_analysis_id": "CA-20240613-001",
+      "resolution_confidence": "91",
+      "policy_compliance": {
+        "compliant": true,
+        "matched_policies": [
+          "Unauthorized Transaction Policy",
+          "Chargeback Consumer Protections"
+        ],
+        "compliance_score": "95"
+      },
+      "evidence_assessment": {
+        "strength": "strong",
+        "completeness": "90",
+        "gaps": []
+      },
+      "risk_factors": {
+        "financial_risk": "low",
+        "fraud_indicators": [],
+        "complexity_level": "low"
+      },
+      "recommended_action": "auto_approve",
+      "escalation_required": false,
+      "escalation_reasons": [],
+      "estimated_resolution_time": "Within 1 business day",
+      "analysis_reasoning": "The dispute involves an unauthorized charge of $250 at TechGadgets Store, reported just 2 days after the transaction. The customer has a valid and consistent account history, and there is no evidence of account misuse or prior disputes. The claim falls clearly within the standardized unauthorized transaction policy, is supported by timely reporting, and carries low financial risk. No fraud indicators or policy gaps are present, and precedent cases with similar facts were resolved in favor of the customer. All criteria for auto-resolution are met; no escalation is necessary."
+    },
+    "metadata": {
+      "agent_name": "Case Analysis Agent",
+      "timestamp": "2024-06-13T11:43:00Z",
+      "analysis_duration": "40 seconds"
+    }
+  },
+  "test_passed": true
+}
